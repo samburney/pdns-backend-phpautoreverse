@@ -1,0 +1,28 @@
+{
+    "name": "sifnt/pdns-backend-phpautoreverse",
+    "description": "PHP-Based On-the-Fly PTR record generator for the PowerDNS Remote Backend",
+    "authors": [
+        {
+            "name": "Sam Burney",
+            "email": "sam.burney@unitiwireless.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://composer.sifnt.net.au"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/database": "4.0.0",
+        "illuminate/cache": "4.0.0",
+        "sifnt/sifnt-util": "dev-master"
+    },
+    "autoload": {
+        "classmap": [
+	       "models/"
+        ]
+    },
+    "minimum-stability": "dev"
+}
