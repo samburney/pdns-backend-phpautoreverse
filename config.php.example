@@ -1,0 +1,37 @@
+<?php
+// SQL Database (Only MySQL has been tested, but SQlite should work fine)
+$db_driver = 'mysql';
+$db_host = 'localhost';
+$db_db = 'phpipam';
+$db_user = 'phpipam';
+$db_pass = 'phpipam';
+$db_prefix = '';
+
+// Script Config
+$soa = array(
+  "you.dns.server.", // Primary Name Server
+  "hostmaster.phpautoreverse.com.", // Hostmaster
+  date("Ymd") . '00', // Serial
+  10800, // Refresh
+  3600, // Retry
+  604800, // Expire
+  3600, // Default TTL
+);
+
+// Autoreverse prefixes/suffixes for IPv4
+$suffix_ipv4 = array(
+	'10.0.0.0/24' => array (
+		'suffix' => 'internal.test',
+	),
+);
+
+// Autoreverse prefixes/suffixes for IPv6
+$suffix_ipv6 = array(
+	'fedc:ba::/24' => array(
+		'suffix' => 'ipv6.sa.cust.unitiwireless.com',
+	),
+);
+
+// Suffixes which may have entries in PHPIPAM, these will override Autoreverse resolution
+$phpipam_suffixes = array(
+);

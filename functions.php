@@ -100,3 +100,17 @@ function gmp_convert($num, $base_a, $base_b)
 {
   return gmp_strval ( gmp_init($num, $base_a), $base_b );
 }
+
+// Recursive in_array
+function in_array_recursive($value, $array) {
+    foreach($array as $item) { 
+        if(!is_array($item)) { 
+            if ($item == $value) return true; 
+            else continue; 
+        } 
+        
+        if(in_array($value, $item)) return true; 
+        else if(in_array_recursive($value, $item)) return true; 
+    } 
+    return false; 
+} 
